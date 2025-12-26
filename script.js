@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Tet effects
     initTetEffects();
+    
+    // Initialize scroll to top button
+    initScrollToTop();
 });
 
 // Tet Effects
@@ -551,5 +554,29 @@ function handleSwipe() {
     if (touchEndX > touchStartX + 50) {
         // Swipe right
         changeSlide(-1);
+    }
+}
+
+// Scroll to Top Button
+function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 }
