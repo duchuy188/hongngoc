@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồng Ngọc Textile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <h1>HỒNG NGỌC TEXTILE</h1>
+                </div>
+                <div class="language-switcher">
+                    <a href="#" class="lang-btn active">VI</a>
+                    <a href="#" class="lang-btn">EN</a>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li class="dropdown">
+                        <a href="#products">Sản phẩm</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#product-soi">Sản phẩm sợi</a></li>
+                            <li><a href="#product-vai-moc">Sản phẩm vải mộc</a></li>
+                            <li><a href="#product-vai-tp">Vải thành phẩm</a></li>
+                            <li><a href="#product-may-mac">Sản phẩm may mặc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#news">Tin tức</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slider -->
+    <section class="slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="assets/images/slider1.jpg" alt="Hồng Ngọc Textile">
+            </div>
+            <div class="slide">
+                <img src="assets/images/slider2.jpg" alt="Factory">
+            </div>
+            <div class="slide">
+                <img src="assets/images/slider3.jpg" alt="Textile">
+            </div>
+            <div class="slide">
+                <img src="assets/images/slider4.jpg" alt="Tencel">
+            </div>
+            <div class="slide">
+                <img src="assets/images/slider5.jpg" alt="Bamboo">
+            </div>
+            <div class="slide">
+                <img src="assets/images/slider6.jpg" alt="Printing">
+            </div>
+        </div>
+        <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">SẢN PHẨM</h2>
+            <div class="products-grid">
+                <div class="product-card" id="product-soi">
+                    <div class="product-image">
+                        <img src="assets/images/product-soi.jpg" alt="Sản phẩm sợi">
+                    </div>
+                    <div class="product-content">
+                        <h3>SẢN PHẨM SỢI</h3>
+                        <p>Sản phẩm sợi chất lượng cao</p>
+                        <a href="#" class="btn-more">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="product-card" id="product-vai-moc">
+                    <div class="product-image">
+                        <img src="assets/images/product-vai-moc.jpg" alt="Sản phẩm vải mộc">
+                    </div>
+                    <div class="product-content">
+                        <h3>SẢN PHẨM VẢI MỘC</h3>
+                        <p>Vải mộc đa dạng mẫu mã</p>
+                        <a href="#" class="btn-more">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="product-card" id="product-vai-tp">
+                    <div class="product-image">
+                        <img src="assets/images/product-vai-tp.jpg" alt="Vải thành phẩm">
+                    </div>
+                    <div class="product-content">
+                        <h3>VẢI THÀNH PHẨM</h3>
+                        <p>Vải thành phẩm cao cấp</p>
+                        <a href="#" class="btn-more">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="product-card" id="product-may-mac">
+                    <div class="product-image">
+                        <img src="assets/images/product-may-mac.jpg" alt="Sản phẩm may mặc">
+                    </div>
+                    <div class="product-content">
+                        <h3>SẢN PHẨM MAY MẶC</h3>
+                        <p>May mặc thời trang</p>
+                        <a href="#" class="btn-more">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">GIỚI THIỆU</h2>
+            <div class="about-content">
+                <h3>Giới thiệu Hồng Ngọc Textile</h3>
+                <p>Hồng Ngọc Textile - Công ty chuyên về sản xuất và kinh doanh các sản phẩm dệt may chất lượng cao. Chúng tôi cung cấp đa dạng các sản phẩm từ sợi, vải mộc, vải thành phẩm đến các sản phẩm may mặc hoàn chỉnh...</p>
+                <a href="#" class="btn-more">Xem chi tiết</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <h2 class="section-title">VIDEO</h2>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <p>Video giới thiệu công ty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3>HỒNG NGỌC TEXTILE</h3>
+                <div class="contact-info">
+                    <p><strong>Địa chỉ:</strong> 127 đường Lê Văn Chí, phường Linh Xuân, thành phố Hồ Chí Minh, Việt Nam</p>
+                    <p><strong>Điện thoại:</strong> 028 3896 9337</p>
+                    <p><strong>Fax:</strong> (+84-28) 38 969 319</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Bản quyền thuộc về HỒNG NGỌC TEXTILE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
