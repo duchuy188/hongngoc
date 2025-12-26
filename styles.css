@@ -66,6 +66,39 @@ body {
 /* Navigation Styles */
 .nav {
     padding: 15px 0;
+    position: relative;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav-menu {
@@ -380,28 +413,79 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-top {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         gap: 15px;
-        text-align: center;
+        padding: 15px 20px;
     }
 
     .logo h1 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .language-switcher {
+        order: 2;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 15px;
     }
 
     .nav-menu {
+        display: none;
         flex-direction: column;
         gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
     }
 
     .nav-menu li {
         border-bottom: 1px solid #eee;
+        width: 100%;
+    }
+
+    .nav-menu a {
+        padding: 18px 20px;
+        font-size: 16px;
+        width: 100%;
     }
 
     .dropdown-menu {
         position: static;
         box-shadow: none;
         background-color: #f5f5f5;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .dropdown-menu a {
+        padding: 15px 20px 15px 40px;
+        font-size: 15px;
     }
 
     .slider {

@@ -412,29 +412,38 @@ function createTetGreeting() {
 
 // Mobile menu setup
 function setupMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
     const dropdowns = document.querySelectorAll('.dropdown');
-    
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        
-        if (window.innerWidth <= 768) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const menu = dropdown.querySelector('.dropdown-menu');
-                
-                // Toggle display
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                } else {
-                    // Hide all other dropdowns
-                    document.querySelectorAll('.dropdown-menu').forEach(m => {
-                        m.style.display = 'none';
-                    });
-                    menu.style.display = 'block';
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Handle dropdown clicks on mobile
+        dropdowns.forEach(dropdown => {
+            const dropdownLink = dropdown.querySelector('a');
+            dropdownLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
                 }
             });
-        }
-    });
+        });
+    }
 }
 
 // Smooth scrolling for anchor links
